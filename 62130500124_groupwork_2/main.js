@@ -1,4 +1,4 @@
-const app = {
+git const app = {
     data() {
         return {
             msg: 'Hello, Vue3'
