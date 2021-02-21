@@ -1,6 +1,7 @@
 const app = {
     data() {
         return {
+            inputSearch: '' ,
             heart: 'images/heart.png',
             name:"Why don't we",
             type:"My husband",
@@ -37,8 +38,14 @@ const app = {
     methods: {
         favIcon(index){
             this.photos[index].done = !this.photos[index].done
-        }
+        },
+    
+    toggleCancel(){
+        this.inputSearch = '';
+        this.isHidden = !this.isHidden;
     },
+    },
+
     computed: {
         filteredSearch() {
             return this.photos.filter(showSearch => {
