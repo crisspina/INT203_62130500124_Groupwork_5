@@ -1,5 +1,6 @@
 app.component('photo-item', {
     props: {
+        type : text ;
 
     },
     template:
