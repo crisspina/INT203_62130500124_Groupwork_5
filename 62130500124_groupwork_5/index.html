@@ -31,7 +31,6 @@
     <div id="app">
         <div class="row py-5 px-4">
             <div class="col-md-5 mx-96" v-show="!expandPhoto" >
-                <!-- Profile widget -->
                 <div class="bg-white shadow rounded overflow-hidden">
                     <div class="px-4 pt-0 pb-4 cover">
                         <div class="media align-items-end profile-head grid grid-cols-2">
@@ -44,34 +43,22 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="py-4 px-4 mt-16">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <!-- show number  -->
                             <h6 class="font-black">Why Don't We Gallery: {{countofphotos }}</h6>
-                            <!-- show total like -->
                             <h6 class="font-black">Total Likes: {{ countLike }} </h6>
-                            <!-- search icon -->
                             <photo-search @searching="(key)=>{this.inputSearch=key}"></photo-search>
-
-
                         </div>
                         <div class="row" class="col-lg-6 mb-2 pr-lg-1 ">
-
-                            <!-- show photo list -->
                             <div  v-for="(photo,index) in filteredSearch" :key="photo.id" v-if="filteredSearch.length !== 0">
                                 <photo-list :photo="photo" @click-fav="toggleLike" @click-expand="popupImage"></photo-list>
                                 <photo-view :photo="photo" @click-expand="popupImage"></photo-view>
                             </div>
-                            <!-- not found -->
                             <div v-else>
                                 <h4 class="text-black">
                                     <span class="italic text-red-500">{{inputSearch}}</span> is not found
                                 </h4>
                             </div>
-
-                            <!-- expand -->
-
                         </div>
                     </div>
                 </div>
